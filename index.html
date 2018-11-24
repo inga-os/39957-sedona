@@ -7,7 +7,7 @@
 <body>
     <header class="main-header">
         <div class="main-header-logo">
-            <a><img src="img/logo-sedona.svg" alt="Логотип Седона" width="140" height="71"></a>
+            <a><img src="img/logo-sedona.svg" alt="Логотип поиска отелей в Седоне" width="140" height="71"></a>
         </div>
         <nav class="main-menu">
             <ul class="main-menu-list">
@@ -33,10 +33,31 @@
             <h2 class="visually-hidden">Найти отель в Седоне</h2>
             <span class="attention">ЗАИНТЕРЕСОВАЛИСЬ?</span>
             <p>УКАЖИТЕ ПРЕДПОЛАГАЕМЫЕ ДАТЫ ПОЕЗДКИ, И МЫ ПОКАЖЕМ ВАМ ЛУЧШИЕ ПРЕДЛОЖЕНИЯ ГОСТИНИЦ В СЕДОНЕ</p>
-            <button class="search-dropdown-btn">ПОИСК ГОСТИНИЦЫ В СЕДОНЕ</button>
+            <button type="button" class="dropdown-btn">ПОИСК ГОСТИНИЦЫ В СЕДОНЕ</button>
             <!-- Дальше должно развернуться модальное окно формы -->
+            <!--Вопрос: стили полей формы и их расположение относительно друг друга прописываются через CSS?
+            Если да, то мне нужно обернуть каждое поле в div с классом?-->
+            <form action="https://echo.htmlacademy.ru" method="post" class="modal date-search-form">
+                <label for="check-in-id">ДАТА ЗАЕЗДА</label>
+                <input type="date" name="check-in" id="check-in-id">
+                <!--Не знаю, как вставить иконку календаря вместо треугольничков выбора
+                 и сделать плейсхолдеры у поля с типом date-->
+                <label for="check-out-id">ДАТА ВЫЕЗДА</label>
+                <input type="date" name="check-out" id="check-out-id">
+                <label for="number-adults-id">ВЗРОСЛЫЕ</label>
+                <input type="number" name="number-adults" id="number-adults-id" placeholder="2" min="1" max="30" step="1">
+                <label for="number-kids-id">ДЕТИ</label>
+                <input type="number" name="number-kids" id="number-kids-id" placeholder="0" min="0" max="10" step="1">
+                <button type="submit" class="date-search-btn">НАЙТИ</button>
+            </form>
         </section>
-        <!-- Здесь должна быть карта -->
+        <!-- Здесь будет карта -->
+        <section class="modal map">
+            <h2 class="visually-hidden">Карта Седоны</h2>
+            <p>
+                <img src="img/map.jpg" width="1200" height="593" alt="Карта города Седона">
+            </p>
+        </section>
     </main>
     <footer class="main-footer">
         <p class="footer-hashtag">#VISITSEDONA</p>
@@ -46,7 +67,7 @@
             <li class="footer-social-item"><a href="www.youtube.com/12345">Мы на ютьюбе</a></li>
         </ul>
         <p>WEBSITE BY
-            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-html-academy.svg" alt="HTML Academy" width="115" height="41">
+            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-html-academy.svg" alt="Логотип HTML Academy" width="115" height="41">
             </a>
         </p>
     </footer>
