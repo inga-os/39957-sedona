@@ -7,7 +7,7 @@
 <body>
     <header class="main-header">
         <div class="main-header-logo">
-            <a href="index.html"><img src="img/logo-sedona.svg" alt="Logo Sedona" width="140" height="71"></a>
+            <a href="index.html"><img src="img/logo-sedona.svg" alt="Логотип поиска отелей в Седоне" width="140" height="71"></a>
         </div>
         <nav class="main-menu">
             <ul class="main-menu-list">
@@ -21,15 +21,60 @@
     <main class="container">
         <section class="filters">
             <h2 class="visually-hidden">Фильтры поиска отеля</h2>
-            <!-- Здесь будет форма -->
+            <!-- Попробовала разметить форму. Пока не знаю, как сделать ползунок с ценой -->
+            <form action="https://echo.htmlacademy.ru" method="get">
+                <fieldset>
+                <legend>ИНФРАСТРУКТУРА:</legend>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="swim-pool" id="swim-pool-id" checked>
+                        <label for="swim-pool-id">БАССЕЙН</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="parking" id="parking-id">
+                        <label for="parking-id">ПАРКОВКА</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="wi-fi" id="wi-fi-id">
+                        <label for="wi-fi-id">WI-FI</label>
+                    </li>
+                </ul>
+                </fieldset>
+                <fieldset>
+                <legend>ТИП ЖИЛЬЯ:</legend>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="hotel" id="hotel-id" checked>
+                        <label for="hotel-id">ГОСТИНИЦА</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="motel" id="motel-id" checked>
+                        <label for="motel-id">МОТЕЛЬ</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="apartment" id="apartment-id" checked>
+                        <label for="apartment-id">АПАРТАМЕНТЫ</label>
+                    </li>
+                </ul>
+                </fieldset>
+                <input type="range" name="dayprice" id="day-price-id" min="0" max="3000">
+                <label for="day-price-id">СТОИМОСТЬ В СУТКИ (Р):</label>
+                <button type="submit" class="filter-search-btn">ПОКАЗАТЬ</button>
+            </form>
         </section>
         <section class="catalogue">
             <h2 class="visually-hidden">Список найденных отелей</h2>
             <ul class="catalogue-list">
                 <li class="catalogue-hotel">
-                    <img src="img/hotel-amara-resort.jpg" alt="Гостиница Amara Resort & Spa" width="135" height="90">
+                  <!--Вопрос: в демках нам продолжают показывать, что и заголовок, и картинка, и описание
+                   должны быть обернуты в ссылку на страницу товара. Это точно не нужно делать?-->
+                    <a href="amararesort-description.html">
+                        <img src="img/hotel-amara-resort.jpg" alt="Гостиница Amara Resort & Spa" width="135" height="90">
+                    </a>
                     <div>
-                        <h3>AMARA RESORT & SPA</h3>
+                        <a href="amararesort-description.html">
+                            <h3>AMARA RESORT & SPA</h3>
+                        </a>
                         <span class="catalogue-hotel-category">ГОСТИНИЦА</span>
                         <span class="catalogue-hotel-pricerange">ОТ 4000 Р.</span>
                         <a class="description-btn" href="amararesort-description.html">ПОДРОБНЕЕ</a>
@@ -79,7 +124,7 @@
             <li class="footer-social-item"><a href="www.youtube.com/12345">Мы на ютьюбе</a></li>
         </ul>
         <p>WEBSITE BY
-            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-html-academy.svg" alt="HTML Academy" width="115" height="41">
+            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-html-academy.svg" alt="Логотип HTML Academy" width="115" height="41">
             </a>
         </p>
     </footer>
