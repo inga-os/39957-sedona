@@ -3,6 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <!--Стили в документе style.css не применяются к html-файлу.
+    Попробовала подключить его прямо здесь, но результат тот же:(
+    В демке об этом ничего нет, гугл тоже ничего не дал. Сорри, если глупый вопрос.
+    Помоги, пожалуйста-->
+    <link href="style.css" rel="stylesheet" type="text/css" >
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
 </head>
 <body>
     <header class="main-header">
@@ -10,11 +17,11 @@
             <a><img src="img/logo-sedona.svg" alt="Логотип поиска отелей в Седоне" width="140" height="71"></a>
         </div>
         <nav class="main-menu">
-            <ul class="main-menu-list">
-                <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
-                <li><a href="video.html">ФОТО И ВИДЕО</a></li>
-                <li><a href="statemap.html">КАРТА ШТАТА</a></li>
-                <li><a href="hotels.html">ГОСТИНИЦЫ</a></li>
+            <ul class="menu-list">
+                <li><a href="information.html">Информация</a></li>
+                <li><a href="video.html">Фото и видео</a></li>
+                <li><a href="statemap.html">Карта штата</a></li>
+                <li><a href="hotels.html">Гостиницы</a></li>
             </ul>
         </nav>
     </header>
@@ -25,30 +32,40 @@
         </section>
         <section class="reasons">
             <h2 class="visually-hidden">5 причин посетить Седону</h2>
-            <p class="attention">СЕДОНА - НЕБОЛЬШОЙ ГОРОДОК В АРИЗОНЕ, ЗАСЛУЖИВАЮЩИЙ БОЛЬШЕГО!</p>
-            <p>РАССМОТРИМ ПЯТЬ ПРИЧИН, ПО КОТОРЫМ СЕДОНА КРУЧЕ, ЧЕМ ГРАНД-КАНЬОН!</p>
+            <p class="attention">Седона - небольшой городок в Аризоне, заслуживающий большего!</p>
+            <p>Рассмотрим пять причин, по которым Седона круче, чем Гранд-Каньон!</p>
         </section>
         <!-- Дальше идут блоки пяти причин -->
         <section class="hotel-search">
             <h2 class="visually-hidden">Найти отель в Седоне</h2>
-            <span class="attention">ЗАИНТЕРЕСОВАЛИСЬ?</span>
-            <p>УКАЖИТЕ ПРЕДПОЛАГАЕМЫЕ ДАТЫ ПОЕЗДКИ, И МЫ ПОКАЖЕМ ВАМ ЛУЧШИЕ ПРЕДЛОЖЕНИЯ ГОСТИНИЦ В СЕДОНЕ</p>
-            <button type="button" class="dropdown-btn">ПОИСК ГОСТИНИЦЫ В СЕДОНЕ</button>
+            <span class="attention">Заинтересовались?</span>
+            <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+            <button type="button" class="dropdown-btn">Поиск гостиницы в Седоне</button>
             <!-- Дальше должно развернуться модальное окно формы -->
-            <!--Вопрос: стили полей формы и их расположение относительно друг друга прописываются через CSS?
-            Если да, то мне нужно обернуть каждое поле в div с классом?-->
-            <form action="https://echo.htmlacademy.ru" method="post" class="modal date-search-form">
-                <label for="check-in-id">ДАТА ЗАЕЗДА</label>
-                <input type="date" name="check-in" id="check-in-id">
-                <!--Не знаю, как вставить иконку календаря вместо треугольничков выбора
-                 и сделать плейсхолдеры у поля с типом date-->
-                <label for="check-out-id">ДАТА ВЫЕЗДА</label>
-                <input type="date" name="check-out" id="check-out-id">
-                <label for="number-adults-id">ВЗРОСЛЫЕ</label>
-                <input type="number" name="number-adults" id="number-adults-id" placeholder="2" min="1" max="30" step="1">
-                <label for="number-kids-id">ДЕТИ</label>
-                <input type="number" name="number-kids" id="number-kids-id" placeholder="0" min="0" max="10" step="1">
-                <button type="submit" class="date-search-btn">НАЙТИ</button>
+            <form action="https://echo.htmlacademy.ru" method="post" class="modal date-form">
+                <p>
+                    <label for="check-in-id">Дата заезда</label>
+                    <input type="text" class="date" name="check-in" id="check-in-id" placeholder="24 апреля 2017">
+                </p>
+                <p>
+                    <label for="check-out-id">Дата выезда</label>
+                    <input type="text" class="date" name="check-out" id="check-out-id" placeholder="4 июля 2017">
+                </p>
+                <p>
+                    <label for="number-adults-id">Взрослые</label>
+                    <!-- Вопрос: вставляем иконки "+" и "-" прямо внутрь тега button через <img>
+                    или с помощью класса это делаем?-->
+                    <button type="button" class="minus-btn"></button>
+                    <input type="text" name="number-adults" id="number-adults-id" placeholder="2">
+                    <button type="button" class="plus-btn"></button>
+                </p>
+                <p>
+                    <label for="number-kids-id">Дети</label>
+                    <button type="button" class="minus-btn">
+                    <input type="text" name="number-kids" id="number-kids-id" placeholder="0">
+                    <button type="button" class="plus-btn"></button>
+                </p>
+                <button type="submit" class="date-btn">Найти</button>
             </form>
         </section>
         <!-- Здесь будет карта -->
@@ -61,10 +78,10 @@
     </main>
     <footer class="main-footer">
         <p class="footer-hashtag">#VISITSEDONA</p>
-        <ul class="footer-social-list">
-            <li class="footer-social-item"><a href="www.twitter.com/12345">Мы в твиттере</a></li>
-            <li class="footer-social-item"><a href="www.facebook.com/12345">Мы в фейсбуке</a></li>
-            <li class="footer-social-item"><a href="www.youtube.com/12345">Мы на ютьюбе</a></li>
+        <ul class="footer-social">
+            <li class="social-button"><a href="www.twitter.com/12345">Мы в твиттере</a></li>
+            <li class="social-button"><a href="www.facebook.com/12345">Мы в фейсбуке</a></li>
+            <li class="social-button"><a href="www.youtube.com/12345">Мы на ютьюбе</a></li>
         </ul>
         <p>WEBSITE BY
             <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-html-academy.svg" alt="Логотип HTML Academy" width="115" height="41">

@@ -21,11 +21,11 @@
     <main class="container">
         <section class="filters">
             <h2 class="visually-hidden">Фильтры поиска отеля</h2>
-            <!-- Попробовала разметить форму. Пока не знаю, как сделать ползунок с ценой -->
+            <!-- Попробовала разметить форму-->
             <form action="https://echo.htmlacademy.ru" method="get">
                 <fieldset>
                 <legend>ИНФРАСТРУКТУРА:</legend>
-                <ul>
+                <ul class="filter-search">
                     <li>
                         <input type="checkbox" name="swim-pool" id="swim-pool-id" checked>
                         <label for="swim-pool-id">БАССЕЙН</label>
@@ -42,7 +42,7 @@
                 </fieldset>
                 <fieldset>
                 <legend>ТИП ЖИЛЬЯ:</legend>
-                <ul>
+                <ul class="filter-search">
                     <li>
                         <input type="checkbox" name="hotel" id="hotel-id" checked>
                         <label for="hotel-id">ГОСТИНИЦА</label>
@@ -57,17 +57,14 @@
                     </li>
                 </ul>
                 </fieldset>
-                <input type="range" name="dayprice" id="day-price-id" min="0" max="3000">
-                <label for="day-price-id">СТОИМОСТЬ В СУТКИ (Р):</label>
-                <button type="submit" class="filter-search-btn">ПОКАЗАТЬ</button>
+                <!-- здесь будет ползунок с ценой-->
+                <button type="submit" class="filter-btn">ПОКАЗАТЬ</button>
             </form>
         </section>
         <section class="catalogue">
             <h2 class="visually-hidden">Список найденных отелей</h2>
             <ul class="catalogue-list">
                 <li class="catalogue-hotel">
-                  <!--Вопрос: в демках нам продолжают показывать, что и заголовок, и картинка, и описание
-                   должны быть обернуты в ссылку на страницу товара. Это точно не нужно делать?-->
                     <a href="amararesort-description.html">
                         <img src="img/hotel-amara-resort.jpg" alt="Гостиница Amara Resort & Spa" width="135" height="90">
                     </a>
@@ -86,9 +83,13 @@
                     </p>
                 </li>
                 <li class="catalogue-hotel">
-                    <img src="img/hotel-quail-inn.jpg" alt="Мотель Desert Quail Inn" width="135" height="90">
+                    <a href="desert-inn-description.html">
+                        <img src="img/hotel-quail-inn.jpg" alt="Мотель Desert Quail Inn" width="135" height="90">
+                    </a>
                     <div>
-                        <h3>DESERT QUAIL INN</h3>
+                        <a href="desert-inn-description.html">
+                            <h3>DESERT QUAIL INN</h3>
+                        </a>
                         <span class="catalogue-hotel-category">МОТЕЛЬ</span>
                         <span class="catalogue-hotel-pricerange">ОТ 3000 Р.</span>
                         <a class="description-btn" href="desert-inn-description.html">ПОДРОБНЕЕ</a>
@@ -100,9 +101,13 @@
                     </p>
                 </li>
                 <li class="catalogue-hotel">
-                    <img src="img/hotel-villa-poco-diablo.jpg" alt="Апартаменты Villas at Poco Diablo" width="135" height="90">
+                    <a href="villas-diablo-description.html">
+                        <img src="img/hotel-villa-poco-diablo.jpg" alt="Апартаменты Villas at Poco Diablo" width="135" height="90">
+                    </a>
                     <div>
-                        <h3>VILLAS AT POCO DIABLO</h3>
+                        <a href="villas-diablo-description.html">
+                            <h3>VILLAS AT POCO DIABLO</h3>
+                        </a>
                         <span class="catalogue-hotel-category">АПАРТАМЕНТЫ</span>
                         <span class="catalogue-hotel-pricerange">ОТ 2000 Р.</span>
                         <a class="description-btn" href="villas-diablo-description.html">ПОДРОБНЕЕ</a>

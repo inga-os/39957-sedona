@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #333333;
+    text-transform: uppercase;
+    text-align: center;
+
+    background-color: #ffffff;
+    background-image: url("img/background-photo-main.jpg");
+    /* Так можно поставить фон, или отдельным элементом нужно делать
+    это фото и картинки-тексты на нем?*/
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-menu {
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #000000;
+
+    background-color: #ffffff;
+}
+
+.menu-list {
+    list-style: none;
+}
+
+.menu-list a {
+    background-color: #000000;
+}
+
+.menu-list a:hover {
+    background-color: #81b3d2;
+}
+
+.menu-list a:focus {
+    background-color: #766357;
+}
+/* В макете цвет ссылки при нажатии не черный, но на слое я вижу по факту #000000
+ https://gyazo.com/03ac1f3c544a50625db04055a4ddc077
+ и при копировании CSS из фш тоже черный - rgba(0, 0, 0, 0.302).
+ Не знаю, что делать:( */
+.menu-list a:active {
+    background-color: #000000;
+}
+
+.reasons .attention {
+    font-size: 21px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.hotel-search .attention {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.dropdown-btn {
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 700;
+    /* Хотелось бы использовать для кнопок font: inherit, чтобы не повторяться,
+    но жирность и размер шрифта другие, чем в body. Значит, уже нельзя так сделать?
+  */
+    text-align: center;
+    color: #ffffff;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    background-color: #766357;
+    border: none;
+}
+
+.dropdown-btn:hover {
+    background-color: #604e43;
+}
+
+.dropdown-btn:active {
+    color: #ffffff;
+
+    background-color: #503e33;
+}
+    /*цвет текста должен меняться при нажатии,
+    но в при просмотре слоя в фш я вижу белый
+    - у меня не поддерживается PT Sans Bold, но на превью белый
+    - при конвертации в Myriad Pro - тоже белый
+    - при копировании CSS из фш цвет rgba(255, 255, 255, 0.302) - тоже белый
+    Подскажи, пожалуйста, в чем ошибка?-->*/
+
+.date-btn {
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    background-color: #81b3d2;
+    border: none;
+}
+
+.date-btn:hover {
+    background-color: #669ec0;
+}
+
+.date-btn:active {
+    color: #ffffff;
+    /*тот же вопрос: цвет текста должен меняться при нажатии,
+    но в при просмотре слоя в фш я вижу белый*/
+
+    background-color: #5496bd;
+}
+
+.main-footer {
+    color: #000000;
+
+    background-color: #ffffff;
+  /* Цвет футера на самом деле не белый, под ним как бы просвечивает карта.
+   Не знаю, как это сделать*/
+}
+
+.footer-hashtag {
+    font-weight: 700;
+}
+
+ul.footer-social  {
+    list-style: none;
+}
+
+/* Если правильно поняла демку,
+ иконки соцсетей и картинку html academy мы пока не трогаем*/
