@@ -11,8 +11,8 @@ body {
 
     background-color: #ffffff;
     background-image: url("img/background-photo-main.jpg");
-    /* Так можно поставить фон, или отдельным элементом нужно делать
-    это фото и картинки-тексты на нем?*/
+    /* Так можно поставить фон? Видимо нет) но все же, можешь объяснить,
+     почему он сейчас не виден на странице в браузере? Спасибо:)*/
     background-position: top center;
     background-repeat: no-repeat;
 }
@@ -35,22 +35,22 @@ a {
 }
 
 .menu-list a {
-    background-color: #000000;
+    color: #000000;
 }
 
 .menu-list a:hover {
-    background-color: #81b3d2;
+    color: #81b3d2;
 }
 
 .menu-list a:focus {
-    background-color: #766357;
+    color: #766357;
 }
 /* В макете цвет ссылки при нажатии не черный, но на слое я вижу по факту #000000
  https://gyazo.com/03ac1f3c544a50625db04055a4ddc077
  и при копировании CSS из фш тоже черный - rgba(0, 0, 0, 0.302).
  Не знаю, что делать:( */
 .menu-list a:active {
-    background-color: #000000;
+    color: #000000;
 }
 
 .reasons .attention {
