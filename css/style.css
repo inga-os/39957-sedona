@@ -9,25 +9,30 @@ body {
     text-transform: uppercase;
     text-align: center;
 
-    background-color: #ffffff;
-    background-image: url("img/background-photo-main.jpg");
-    /* Так можно поставить фон? Видимо нет) но все же, можешь объяснить,
-     почему он сейчас не виден на странице в браузере? Спасибо:)*/
-    background-position: top center;
-    background-repeat: no-repeat;
+    background-color: #f2f2f2;
 }
 
 a {
     text-decoration: none;
 }
 
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    …
+}
+
+.modal {
+    display: none; /*Временно*/
+}
 .main-menu {
     font-size: 14px;
     line-height: 26px;
     font-weight: 700;
     color: #000000;
-
-    background-color: #ffffff;
 }
 
 .menu-list {
@@ -52,6 +57,20 @@ a {
 .menu-list a:active {
     color: #000000;
 }
+
+section.introduction {
+    background-image: url("img/background-photo-main.jpg");
+    /*Картинка не подгружается, не могу понять почему:(
+     Черный фон поставила временно для удобства разметки.
+     Помоги пожалуйста*/
+    width: auto;
+    min-height: 571px;
+    /*Так можно height указать? Не понимаю, как еще задать высоту этому блоку,
+     у него ведь нет содержания, только картинка на картинке*/
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #000000;
+  }
 
 .reasons .attention {
     font-size: 21px;
@@ -143,3 +162,116 @@ ul.footer-social  {
 
 /* Если правильно поняла демку,
  иконки соцсетей и картинку html academy мы пока не трогаем*/
+
+/* ----- Сеточные стили ----- */
+
+/* Вопрос - как мы измеряем min width и height для body?
+ В демке это есть, но непонятно, откуда взялись эти цифры.
+ Поставила пока размер макета просто */
+html,
+body {
+    min-width: 1280px;
+    min-height: 2726px;
+}
+
+.main-header {
+    margin-bottom: 0px;
+}
+
+.main-header-logo {
+    width: 140px;
+    height: 71px;
+    padding-right: 52px;
+    padding-left: 52px;
+    padding-top: 0;
+}
+
+.menu-list {
+    padding: 0;
+    margin: 0;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-menu {
+    display: flex;
+}
+
+.main-navigation-wrapper {
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.container {
+    width: 1200px;
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+.main-navigation-wrapper .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.introduction {
+    margin-bottom: 70px;
+    padding-top: 1px;
+}
+
+.reasons .attention {
+     width: 576px;
+     margin: 0 auto;
+}
+
+.reasons {
+    margin-bottom: 70px;
+}
+
+.hotel-search {
+    width: 576px;
+    margin: 0 auto;
+}
+
+.dropdown-btn {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 140px;
+    padding-right: 140px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.map {
+  /*Есть лишний отступ между кнопкой и картой.
+Как сделать так, чтобы кнопка "приклеилась" к краю блока?*/
+}
+
+.main-footer {
+   margin-top: 0;
+}
+
+.footer-hashtag {
+    margin: 0;
+    width: 155px;
+    margin-right: 260px;
+    padding-top: 55px;
+}
+
+.footer-social {
+    margin: 0;
+    padding-top: 36px;
+    width: 155px;
+}
+
+.copyright {
+    margin: 0;
+    width: 200px;
+    padding-top: 40px;
+    margin-left: auto;
+    padding-right: 101px;
+}
+
+.main-footer .container {
+    display: flex;
+}

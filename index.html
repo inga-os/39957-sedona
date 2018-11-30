@@ -12,22 +12,30 @@
 </head>
 <body>
     <header class="main-header">
-        <div class="main-header-logo">
-            <a><img src="img/logo-sedona.svg" alt="Логотип поиска отелей в Седоне" width="140" height="71"></a>
-        </div>
         <nav class="main-menu">
-            <ul class="menu-list">
-                <li><a href="information.html">Информация</a></li>
-                <li><a href="video.html">Фото и видео</a></li>
-                <li><a href="statemap.html">Карта штата</a></li>
-                <li><a href="hotels.html">Гостиницы</a></li>
-            </ul>
+            <div class="main-navigation-wrapper">
+              <!-- сделала обертки по демке, но полного понимания вообще нет:(
+              Не могу сделать сама более простой код для хедера.
+              Шаг влево, шаг вправо и все едет, и я даже не могу разобраться, почему.
+              Мы можем с тобой вместе это посмотреть? может по скайпу? спасибо -->
+                <div class="container">
+                    <div class="main-header-logo">
+                        <a><img src="img/logo-sedona.svg" alt="Логотип поиска отелей в Седоне" width="140" height="71"></a>
+                    </div>
+                    <ul class="menu-list">
+                        <li><a href="information.html">Информация</a></li>
+                        <li><a href="video.html">Фото и видео</a></li>
+                        <li><a href="statemap.html">Карта штата</a></li>
+                        <li><a href="hotels.html">Гостиницы</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <main class="container">
         <section class="introduction">
             <h1 class="visually-hidden">Отели в Седоне</h1>
-              <!--фоновое изображение с текстом-->
+            <!--фоновое изображение с текстом-->
         </section>
         <section class="reasons">
             <h2 class="visually-hidden">5 причин посетить Седону</h2>
@@ -52,8 +60,7 @@
                 </p>
                 <p>
                     <label for="number-adults-id">Взрослые</label>
-                    <!-- Вопрос: вставляем иконки "+" и "-" прямо внутрь тега button через <img>
-                    или с помощью класса это делаем?-->
+                    <!-- Вопрос: вставляем иконки "+" и "-" прямо внутрь тега button через <img>?-->
                     <button type="button" class="minus-btn"></button>
                     <input type="text" name="number-adults" id="number-adults-id" placeholder="2">
                     <button type="button" class="plus-btn"></button>
@@ -68,24 +75,31 @@
             </form>
         </section>
         <!-- Здесь будет карта -->
-        <section class="modal map">
+        <section class="map">
             <h2 class="visually-hidden">Карта Седоны</h2>
             <p>
                 <img src="img/map.jpg" width="1200" height="593" alt="Карта города Седона">
             </p>
         </section>
     </main>
-    <footer class="main-footer">
-        <p class="footer-hashtag">#VISITSEDONA</p>
-        <ul class="footer-social">
-            <li class="social-button"><a href="www.twitter.com/12345">Мы в твиттере</a></li>
-            <li class="social-button"><a href="www.facebook.com/12345">Мы в фейсбуке</a></li>
-            <li class="social-button"><a href="www.youtube.com/12345">Мы на ютьюбе</a></li>
-        </ul>
-        <p>WEBSITE BY
-            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-html-academy.svg" alt="Логотип HTML Academy" width="115" height="41">
-            </a>
-        </p>
+    <footer class="main-footer container">
+        <div class="container">
+          <!-- два раза класс контейнер, потому что не понимаю,
+           как можно проще сделать флекс-обертки для хедера, отсюда куча классов,и они тянутся до футера.
+            Например, если сделать просто width 1200px для main-footer, то все едет, и я даже не понимаю почему.
+
+         И еще вопрос - между футером и боди лишний отступ, как его убрать? спасибо -->
+            <p class="footer-hashtag">#VISITSEDONA</p>
+            <ul class="footer-social">
+                <li class="social-button"><a href="www.twitter.com/12345">Мы в твиттере</a></li>
+                <li class="social-button"><a href="www.facebook.com/12345">Мы в фейсбуке</a></li>
+                <li class="social-button"><a href="www.youtube.com/12345">Мы на ютьюбе</a></li>
+            </ul>
+            <p class="copyright">WEBSITE BY
+                <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img\logo_html-academy-black.png" alt="Логотип HTML Academy" width="115" height="41">
+                </a>
+            </p>
+        </div>
     </footer>
 </body>
 </html>
