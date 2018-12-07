@@ -25,9 +25,16 @@ a {
     …
 }
 
-.modal {
-    display: none; /*Временно*/
+.modal { /*временно*/
+    display: none;
 }
+
+.center-container {
+    background-color: #ffffff;
+    width: 1200px;
+    margin: 0 auto;
+}
+
 .main-menu {
     font-size: 14px;
     line-height: 26px;
@@ -40,42 +47,65 @@ a {
 }
 
 .menu-list a {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    vertical-align: middle;
     color: #000000;
+}
+
+.menu-list li:nth-child(1) {
+    padding-left: 72px;
+    margin-right: 147px;
+}
+
+.menu-list li:nth-child(3) {
+    margin-left: 390px;
+    margin-right: 163px;
+}
+
+/*не поняла, как можно обойтись марджинами в меню только у первого и третьего элемента.
+ Получается, что четвертый элемент прилипает к правому краю,
+ а у него есть свой отступ*/
+
+.menu-list li:nth-child(4) {
+    padding-right: 72px;
 }
 
 .menu-list a:hover {
     color: #81b3d2;
 }
 
-.menu-list a:focus {
-    color: #766357;
-}
-/* В макете цвет ссылки при нажатии не черный, но на слое я вижу по факту #000000
- https://gyazo.com/03ac1f3c544a50625db04055a4ddc077
- и при копировании CSS из фш тоже черный - rgba(0, 0, 0, 0.302).
- Не знаю, что делать:( */
 .menu-list a:active {
     color: #000000;
+    opacity: 0.3;
 }
 
-section.introduction {
-    background-image: url("img/background-photo-main.jpg");
-    /*Картинка не подгружается, не могу понять почему:(
-     Черный фон поставила временно для удобства разметки.
-     Помоги пожалуйста*/
+.current a {
+    color: #766357;
+}
+
+.introduction {
+    background-image: url("../img/background-photo-main.jpg");
     width: auto;
-    min-height: 571px;
-    /*Так можно height указать? Не понимаю, как еще задать высоту этому блоку,
-     у него ведь нет содержания, только картинка на картинке*/
+
     background-position: top center;
     background-repeat: no-repeat;
-    background-color: #000000;
+    background-color: #bcd5e5;
   }
 
-.reasons .attention {
+.welcome-message {
+    padding-top: 76px;
+    padding-bottom: 80px;
+}
+
+.attention,
+h3 {
     font-size: 21px;
     font-weight: 700;
     color: #000000;
+    padding: 0;
+    margin: 0;
 }
 
 .hotel-search .attention {
@@ -86,13 +116,10 @@ section.introduction {
 }
 
 .dropdown-btn {
-    font-family: "PT Sans", Arial, sans-serif;
+    font-family: "PT Sans", Arial, sans-serif; -
     font-size: 21px;
-    line-height: 26px;
     font-weight: 700;
-    /* Хотелось бы использовать для кнопок font: inherit, чтобы не повторяться,
-    но жирность и размер шрифта другие, чем в body. Значит, уже нельзя так сделать?
-  */
+
     text-align: center;
     color: #ffffff;
     vertical-align: middle;
@@ -100,6 +127,10 @@ section.introduction {
 
     background-color: #766357;
     border: none;
+
+    min-width: 290px;
+    padding: 30px 140px;
+    margin-top: 60px;
 }
 
 .dropdown-btn:hover {
@@ -107,21 +138,15 @@ section.introduction {
 }
 
 .dropdown-btn:active {
-    color: #ffffff;
-
+    color: rgba(255, 255, 255, 0.302);
+    /*Так можно указать opacity, чтобы это свойство относилось только к тексту,
+     а не к кнопке?*/
     background-color: #503e33;
 }
-    /*цвет текста должен меняться при нажатии,
-    но в при просмотре слоя в фш я вижу белый
-    - у меня не поддерживается PT Sans Bold, но на превью белый
-    - при конвертации в Myriad Pro - тоже белый
-    - при копировании CSS из фш цвет rgba(255, 255, 255, 0.302) - тоже белый
-    Подскажи, пожалуйста, в чем ошибка?-->*/
 
 .date-btn {
     font-family: "PT Sans", Arial, sans-serif;
     font-size: 21px;
-    line-height: 26px;
     font-weight: 700;
     text-align: center;
     color: #ffffff;
@@ -137,9 +162,7 @@ section.introduction {
 }
 
 .date-btn:active {
-    color: #ffffff;
-    /*тот же вопрос: цвет текста должен меняться при нажатии,
-    но в при просмотре слоя в фш я вижу белый*/
+    color: rgba(255, 255, 255, 0.302);
 
     background-color: #5496bd;
 }
@@ -147,9 +170,8 @@ section.introduction {
 .main-footer {
     color: #000000;
 
-    background-color: #ffffff;
-  /* Цвет футера на самом деле не белый, под ним как бы просвечивает карта.
-   Не знаю, как это сделать*/
+    background-color: #fefefe;
+
 }
 
 .footer-hashtag {
@@ -160,57 +182,18 @@ ul.footer-social  {
     list-style: none;
 }
 
-/* Если правильно поняла демку,
- иконки соцсетей и картинку html academy мы пока не трогаем*/
 
 /* ----- Сеточные стили ----- */
-
-/* Вопрос - как мы измеряем min width и height для body?
- В демке это есть, но непонятно, откуда взялись эти цифры.
- Поставила пока размер макета просто */
-html,
-body {
-    min-width: 1280px;
-    min-height: 2726px;
-}
 
 .main-header {
     margin-bottom: 0px;
 }
 
-.main-header-logo {
-    width: 140px;
-    height: 71px;
-    padding-right: 52px;
-    padding-left: 52px;
-    padding-top: 0;
-}
-
 .menu-list {
-    padding: 0;
     margin: 0;
-    width: 1200px;
+    padding: 0;
     display: flex;
-    justify-content: space-between;
-}
-
-.main-menu {
-    display: flex;
-}
-
-.main-navigation-wrapper {
-    width: 100%;
-    margin-bottom: 0px;
-}
-
-.container {
-    width: 1200px;
-    background-color: #ffffff;
-    margin: 0 auto;
-}
-
-.main-navigation-wrapper .container {
-    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -220,8 +203,8 @@ body {
 }
 
 .reasons .attention {
-     width: 576px;
-     margin: 0 auto;
+    width: 576px;
+    margin: 0 auto;
 }
 
 .reasons {
@@ -233,45 +216,262 @@ body {
     margin: 0 auto;
 }
 
-.dropdown-btn {
-    padding-top: 35px;
-    padding-bottom: 35px;
-    padding-left: 140px;
-    padding-right: 140px;
-    margin-top: 60px;
-    text-align: center;
-}
-
-.map {
-  /*Есть лишний отступ между кнопкой и картой.
-Как сделать так, чтобы кнопка "приклеилась" к краю блока?*/
+.map-container {
+    margin: 0;
+    padding: 0;
 }
 
 .main-footer {
-   margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
 }
 
 .footer-hashtag {
+    width: 135px;
     margin: 0;
-    width: 155px;
-    margin-right: 260px;
-    padding-top: 55px;
+    margin-right: 255px;
+    padding-left: 132px;
+    padding-top: 47px;
+    padding-bottom: 47px;
 }
 
 .footer-social {
     margin: 0;
-    padding-top: 36px;
     width: 155px;
+    padding-top: 36px;
 }
 
 .copyright {
     margin: 0;
+    margin-left: auto;
     width: 200px;
     padding-top: 40px;
-    margin-left: auto;
     padding-right: 101px;
 }
 
-.main-footer .container {
+/*Стили для страницы отелей*/
+.filters {
+    background-image: url("../img/background-photo-blurred.jpg");
+    width: auto;
+
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #bcd5e5;
+}
+
+.search-form {/*Не получилось сделать форму флекс-элементом,
+  блоки разъезжаются на всю ширину экрана
+  https://gyazo.com/4935b9d2ef492b3d66c7145f0dbb2cac*/
+}
+
+.hotel-search {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #ffffff;
+
+    list-style: none;
+}
+
+.mainfilter {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.filter-btn {
+    font-family: "PT Sans", Arial, sans-serif; -
+    font-size: 21px;
+    font-weight: 400;
+
+    text-align: center;
+    color: #ffffff;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    border-radius: 3px;
+
+  /*Bопрос - как точно померить border-radius?*/
+
+    min-width: 65px;
+    padding: 10px 35px;
+}
+
+.filter-btn:hover {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.found {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.found h3 {
+  /*Вопрос: есть небольшой лишний отступ слева (доп. к 72px).
+   Где ошибка и как это поправить?*/
+    margin: 0;
+    width: 135px;
+    margin-right: 50px;
+    padding-left: 72px;
+    padding-top: 31px;
+    padding-bottom: 31px;
+
+}
+.sorted {
+    margin: 0;
+    width: 355px;
+    padding-top: 41px;
+    padding-bottom: 41px;
     display: flex;
 }
+
+.arrows {
+    margin: 0;
+    width: 35px;
+    margin-left: auto;
+    padding-top: 40px;
+    padding-right: 72px;
+}
+
+.found p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    margin-right: 40px;
+}
+
+.sort-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.sort-list li {
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.302);
+  /*Вопрос: что можно использовать вместо text-decoration или как поправить?
+  Отражается неправильно: подчеркивание очень плотно снизу прилегает к тексту*/
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #81b3d2;
+}
+
+.sort-list li:nth-child(2) {
+    margin-left: 33px;
+    margin-right: 33px;
+}
+
+.sort-list li:hover {
+    color: #81b3d2;
+    opacity: 1;
+}
+
+.sort-list li:active {
+    color: #000000;
+    opacity: 1;
+}
+
+li.sorted-active {
+    text-decoration: none;
+    color: #81b3d2;
+    opacity: 1;
+}
+
+.hotel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hotel-card {
+    display: flex;
+    padding-top: 31px;
+    padding-bottom: 31px;
+}
+
+.hotel-photo {
+    margin: 0;
+    width: 135;
+    padding-left: 72px;
+    margin-right: 30px;
+}
+
+.hotel-info {
+    margin: 0;
+    width: 258px;
+}
+
+.hotel-rating {
+    margin: 0;
+    width: 115px;
+    margin-left: auto;
+    padding-right: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.hotel-points {
+    margin: 0;
+    padding: 0;
+    background-color: #fbfbfb;
+}
+
+.description-btn {
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-align: center;
+    color: #ffffff;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    background-color: #81b3d2;
+
+    min-width: 76px;
+    padding: 9px 16px;
+}
+
+.description-btn:hover {
+    background-color: #669ec0;
+}
+
+.description-btn:active {
+    background-color: #5496bd;
+    color: rgba(255, 255, 255, 0.302);
+}
+
+.booking-btn {
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-align: center;
+    color: #ffffff;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+    background-color: #766357;
+
+    min-width: 112px;
+    padding: 9px 16px;
+  }
+
+.booking-btn:hover {
+    background-color: #604e43;
+}
+
+.booking-btn:active {
+    background-color: #503e33;
+    color: rgba(255, 255, 255, 0.302);

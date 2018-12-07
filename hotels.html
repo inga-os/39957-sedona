@@ -6,137 +6,182 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css" >
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
-    <!--стилизацию для этой страницы пока не делаю, потому что плохо разобралась с главной
-    и там куча вопросов:( -->
 </head>
 <body>
-    <header class="main-header">
-        <div class="main-header-logo">
-            <a href="index.html"><img src="img/logo-sedona.svg" alt="Логотип поиска отелей в Седоне" width="140" height="71"></a>
-        </div>
-        <nav class="main-menu">
-            <ul class="main-menu-list">
-                <li><a href="information.html">ИНФОРМАЦИЯ</a></li>
-                <li><a href="video.html">ФОТО И ВИДЕО</a></li>
-                <li><a href="statemap.html">КАРТА ШТАТА</a></li>
-                <li class="main-menu-item-current"><a href="hotels.html">ГОСТИНИЦЫ</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="container">
-        <section class="filters">
-            <h2 class="visually-hidden">Фильтры поиска отеля</h2>
-            <!-- Попробовала разметить форму-->
-            <form action="https://echo.htmlacademy.ru" method="get">
-                <fieldset>
-                <legend>ИНФРАСТРУКТУРА:</legend>
-                <ul class="filter-search">
-                    <li>
-                        <input type="checkbox" name="swim-pool" id="swim-pool-id" checked>
-                        <label for="swim-pool-id">БАССЕЙН</label>
+    <div class="center-container">
+        <header class="main-header">
+            <div class="main-header-logo">
+                <a><img src="img/logo-sedona.svg" alt="Логотип поиска отелей в Седоне" width="140" height="71"></a>
+            </div>
+            <nav class="main-menu">
+                <ul class="menu-list">
+                    <li><a href="information.html">Информация</a></li>
+                    <li><a href="video.html">Фото и видео</a></li>
+                    <li><a href="statemap.html">Карта штата</a></li>
+                    <li class="current"><a href="hotels.html">Гостиницы</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="container">
+            <section class="filters">
+                <h2 class="visually-hidden">Фильтры поиска отеля</h2>
+                <!-- Вопрос: сама форма может быть флекс-контейнером?
+                Попробовала сделать форму флексом и трем блокам внутри задать ширину и отступы,
+                но они растягиваются на всю ширину экрана и не реагируют на марджины и паддинги
+                 https://gyazo.com/4935b9d2ef492b3d66c7145f0dbb2cac-->
+                <form action="https://echo.htmlacademy.ru" method="get" class="search-form">
+                    <fieldset class="infrastructure">
+                    <legend class="mainfilter">ИНФРАСТРУКТУРА:</legend>
+                    <ul class="hotel-search">
+                        <li>
+                            <input type="checkbox" name="swimpool" id="swimpool-id" checked>
+                            <label for="swimpool-id">БАССЕЙН</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="parking" id="parking-id">
+                            <label for="parking-id">ПАРКОВКА</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wifi" id="wifi-id">
+                            <label for="wifi-id">WI-FI</label>
+                        </li>
+                    </ul>
+                    </fieldset>
+                    <fieldset class="lodging">
+                    <legend class="mainfilter">ТИП ЖИЛЬЯ:</legend>
+                    <ul class="hotel-search">
+                        <li>
+                            <input type="checkbox" name="hotel" id="hotel-id" checked>
+                            <label for="hotel-id">ГОСТИНИЦА</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="motel" id="motel-id" checked>
+                            <label for="motel-id">МОТЕЛЬ</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="apartment" id="apartment-id" checked>
+                            <label for="apartment-id">АПАРТАМЕНТЫ</label>
+                        </li>
+                    </ul>
+                    </fieldset>
+                    <!-- здесь будет ползунок с ценой-->
+                    <div class="show-range">
+                        <p class="mainfilter">Стоимость в сутки (р):</p>
+                        <button type="submit" class="filter-btn">ПОКАЗАТЬ</button>
+                    </div>
+                </form>
+            </section>
+            <section class="found">
+                <h3>Найдено (3)</h3>
+                <div class="sorted">
+                    <p>Сортировка</p>
+                    <ul class="sort-list">
+                        <li class="sorted-active">По цене</li>
+                        <li>По типу</li>
+                        <li>По рейтингу</li>
+                    </ul>
+                </div>
+                <div class="arrows">
+                  <!-- картинку стрелочек поставила временно, чтобы понять, как блок выглядит -->
+                  <img src="img/icon-down-dir.svg" alt="стрелочки - временно" width="11" height="10">
+                  <img src="img/icon-up-dir.svg" alt="стрелочки - временно" width="11" height="10">
+                </div>
+            </section>
+            <section class="catalogue">
+                <h2 class="visually-hidden">Список найденных отелей</h2>
+                <ul class="hotel-list">
+                    <li class="hotel-card">
+                        <div class="hotel-photo">
+                            <a href="amararesort-description.html">
+                                <img src="img/hotel-amara-resort.jpg" alt="Гостиница Amara Resort & Spa" width="135" height="90">
+                            </a>
+                        </div>
+                        <div class="hotel-info">
+                            <a href="amararesort-description.html">
+                                <h3>Amara Resort & Spa</h3>
+                            </a>
+                            <span class="hotel-category">Гостиница</span>
+                            <span class="hotel-pricerange">От 4000 Р.</span>
+                            <a class="description-btn" href="amararesort-description.html">Подробнее</a>
+                            <a class="booking-btn" href="book-hotel.html">Забронировать</a>
+                        </div>
+                        <div class="hotel-rating">
+                            <div class="stars-photo">
+                                <img src="img/star.svg" alt="4 звезды" width="18" height="17">
+                                <img src="img/star.svg" alt="4 звезды" width="18" height="17">
+                                <img src="img/star.svg" alt="4 звезды" width="18" height="17">
+                                <img src="img/star.svg" alt="4 звезды" width="18" height="17">
+                            </div>
+                            <p class="hotel-points">Рейтинг: 8,5</p>
+                        </div>
                     </li>
-                    <li>
-                        <input type="checkbox" name="parking" id="parking-id">
-                        <label for="parking-id">ПАРКОВКА</label>
+                    <li class="hotel-card">
+                        <div class="hotel-photo">
+                          <!-- Вопрос: как сделать, чтобы элементы в блоке располагались правильно?
+                          - чтобы заголовок, текст "Гостиницы" и кнопка "подробнее" были вертикально выровнены,
+                          - и так же текст "от 4000р" и кнопка "забронировать" тоже были выровнены вертикально относительно друг друга?
+                        Пробовала делать элемент hotel-photo флекс-конетйнером,
+                        но не могу поставить элементы как на макете-->
+                            <a href="desert-inn-description.html">
+                                <img src="img/hotel-quail-inn.jpg" alt="Мотель Desert Quail Inn" width="135" height="90">
+                            </a>
+                        </div>
+                        <div class="hotel-info">
+                            <a href="desert-inn-description.html">
+                                <h3>Desert Quail Inn</h3>
+                            </a>
+                            <span class="hotel-category">Мотель</span>
+                            <span class="hotel-pricerange">ОТ 3000 Р.</span>
+                            <a class="description-btn" href="desert-inn-description.html">ПОДРОБНЕЕ</a>
+                            <a class="booking-btn" href="book-hotel.html">ЗАБРОНИРОВАТЬ</a>
+                        </div>
+                        <div class="hotel-rating">
+                            <div class="stars-photo">
+                                <img src="img/star.svg" alt="3 звезды" width="18" height="17">
+                                <img src="img/star.svg" alt="3 звезды" width="18" height="17">
+                                <img src="img/star.svg" alt="3 звезды" width="18" height="17">
+                            </div>
+                            <p class="hotel-points">Рейтинг: 8,9</p>
+                        </div>
                     </li>
-                    <li>
-                        <input type="checkbox" name="wi-fi" id="wi-fi-id">
-                        <label for="wi-fi-id">WI-FI</label>
+                    <li class="hotel-card">
+                        <div class="hotel-photo">
+                            <a href="villas-diablo-description.html">
+                                <img src="img/hotel-villa-poco-diablo.jpg" alt="Апартаменты Villas at Poco Diablo" width="135" height="90">
+                            </a>
+                        </div>
+                        <div class="hotel-info">
+                            <a href="villas-diablo-description.html">
+                                <h3>Villas at Poco Diablo</h3>
+                            </a>
+                            <span class="hotel-category">Апартаменты</span>
+                            <span class="hotel-pricerange">От 2000 Р.</span>
+                            <a class="description-btn" href="villas-diablo-description.html">Подробнее</a>
+                            <a class="booking-btn" href="book-hotel.html">Забронировать</a>
+                        </div>
+                        <div class="hotel-rating">
+                            <div class="stars-photo">
+                                <img src="img/star.svg" alt="2 звезды" width="18" height="17">
+                                <img src="img/star.svg" alt="2 звезды" width="18" height="17">
+                            </div>
+                            <p class="hotel-points">Рейтинг: 9,2</p>
+                        </div>
                     </li>
                 </ul>
-                </fieldset>
-                <fieldset>
-                <legend>ТИП ЖИЛЬЯ:</legend>
-                <ul class="filter-search">
-                    <li>
-                        <input type="checkbox" name="hotel" id="hotel-id" checked>
-                        <label for="hotel-id">ГОСТИНИЦА</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="motel" id="motel-id" checked>
-                        <label for="motel-id">МОТЕЛЬ</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="apartment" id="apartment-id" checked>
-                        <label for="apartment-id">АПАРТАМЕНТЫ</label>
-                    </li>
-                </ul>
-                </fieldset>
-                <!-- здесь будет ползунок с ценой-->
-                <button type="submit" class="filter-btn">ПОКАЗАТЬ</button>
-            </form>
-        </section>
-        <section class="catalogue">
-            <h2 class="visually-hidden">Список найденных отелей</h2>
-            <ul class="catalogue-list">
-                <li class="catalogue-hotel">
-                    <a href="amararesort-description.html">
-                        <img src="img/hotel-amara-resort.jpg" alt="Гостиница Amara Resort & Spa" width="135" height="90">
-                    </a>
-                    <div>
-                        <a href="amararesort-description.html">
-                            <h3>AMARA RESORT & SPA</h3>
-                        </a>
-                        <span class="catalogue-hotel-category">ГОСТИНИЦА</span>
-                        <span class="catalogue-hotel-pricerange">ОТ 4000 Р.</span>
-                        <a class="description-btn" href="amararesort-description.html">ПОДРОБНЕЕ</a>
-                        <a class="booking-btn" href="book-hotel.html">ЗАБРОНИРОВАТЬ</a>
-                    </div>
-                    <p class="catalogue-hotel-rating">
-                        <img src="4-stars-icon.jpg" alt="4 звезды" width="100" height="25">
-                        <span class="catalogue-hotel-rating-scale">РЕЙТИНГ: 8,5</span>
-                    </p>
-                </li>
-                <li class="catalogue-hotel">
-                    <a href="desert-inn-description.html">
-                        <img src="img/hotel-quail-inn.jpg" alt="Мотель Desert Quail Inn" width="135" height="90">
-                    </a>
-                    <div>
-                        <a href="desert-inn-description.html">
-                            <h3>DESERT QUAIL INN</h3>
-                        </a>
-                        <span class="catalogue-hotel-category">МОТЕЛЬ</span>
-                        <span class="catalogue-hotel-pricerange">ОТ 3000 Р.</span>
-                        <a class="description-btn" href="desert-inn-description.html">ПОДРОБНЕЕ</a>
-                        <a class="booking-btn" href="book-hotel.html">ЗАБРОНИРОВАТЬ</a>
-                    </div>
-                    <p class="catalogue-hotel-rating">
-                        <img src="3-stars-icon.jpg" alt="3 звезды" width="100" height="25">
-                        <span class="catalogue-hotel-rating-scale">РЕЙТИНГ: 8,9 </span>
-                    </p>
-                </li>
-                <li class="catalogue-hotel">
-                    <a href="villas-diablo-description.html">
-                        <img src="img/hotel-villa-poco-diablo.jpg" alt="Апартаменты Villas at Poco Diablo" width="135" height="90">
-                    </a>
-                    <div>
-                        <a href="villas-diablo-description.html">
-                            <h3>VILLAS AT POCO DIABLO</h3>
-                        </a>
-                        <span class="catalogue-hotel-category">АПАРТАМЕНТЫ</span>
-                        <span class="catalogue-hotel-pricerange">ОТ 2000 Р.</span>
-                        <a class="description-btn" href="villas-diablo-description.html">ПОДРОБНЕЕ</a>
-                        <a class="booking-btn" href="book-hotel.html">ЗАБРОНИРОВАТЬ</a>
-                    </div>
-                    <p class="catalogue-hotel-rating">
-                        <img src="2-stars-icon.jpg" alt="2 звезды" width="100" height="25">
-                        <span class="catalogue-hotel-rating-scale">РЕЙТИНГ: 9,2</span>
-                    </p>
-                </li>
+            </section>
+        </main>
+        <footer class="main-footer">
+            <p class="footer-hashtag">#VISITSEDONA</p>
+            <ul class="footer-social">
+                <li class="social-button"><a href="www.twitter.com/12345">Мы в твиттере</a></li>
+                <li class="social-button"><a href="www.facebook.com/12345">Мы в фейсбуке</a></li>
+                <li class="social-button"><a href="www.youtube.com/12345">Мы на ютьюбе</a></li>
             </ul>
-        </section>
-    </main>
-    <footer class="main-footer">
-        <p class="footer-hashtag">#VISITSEDONA</p>
-        <ul class="footer-social-list">
-            <li class="footer-social-item"><a href="www.twitter.com/12345">Мы в твиттере</a></li>
-            <li class="footer-social-item"><a href="www.facebook.com/12345">Мы в фейсбуке</a></li>
-            <li class="footer-social-item"><a href="www.youtube.com/12345">Мы на ютьюбе</a></li>
-        </ul>
-        <p>WEBSITE BY
-            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-html-academy.svg" alt="Логотип HTML Academy" width="115" height="41">
-            </a>
-        </p>
-    </footer>
+            <p class="copyright">WEBSITE BY
+                <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img\logo_html-academy-black.png" alt="Логотип HTML Academy" width="115" height="41">
+                </a>
+            </p>
+        </footer>
+    </div>
 </body>
 </html>

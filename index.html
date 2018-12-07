@@ -4,91 +4,76 @@
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
     <link href="css/normalize.css" rel="stylesheet">
-    <!--спасибо, поправила css линк, вроде ок:) Насчет страницы hotels
-     - а тебе не приходят сообщения из чата гитхаба? Я там написала, что оч много вопросов по этой странице,
-     почти по каждому элементу, поэтому пока вторую не делаю, чтобы не множить зря ошибки-->
     <link href="css/style.css" rel="stylesheet" type="text/css" >
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
 </head>
 <body>
-    <header class="main-header">
-        <nav class="main-menu">
-            <div class="main-navigation-wrapper">
-              <!-- сделала обертки по демке, но полного понимания вообще нет:(
-              Не могу сделать сама более простой код для хедера.
-              Шаг влево, шаг вправо и все едет, и я даже не могу разобраться, почему.
-              Мы можем с тобой вместе это посмотреть? может по скайпу? спасибо -->
-                <div class="container">
-                    <div class="main-header-logo">
-                        <a><img src="img/logo-sedona.svg" alt="Логотип поиска отелей в Седоне" width="140" height="71"></a>
-                    </div>
-                    <ul class="menu-list">
-                        <li><a href="information.html">Информация</a></li>
-                        <li><a href="video.html">Фото и видео</a></li>
-                        <li><a href="statemap.html">Карта штата</a></li>
-                        <li><a href="hotels.html">Гостиницы</a></li>
-                    </ul>
-                </div>
+    <div class="center-container">
+        <header class="main-header">
+            <div class="main-header-logo">
+                <a><img src="img/logo-sedona.svg" alt="Логотип поиска отелей в Седоне" width="140" height="71"></a>
             </div>
-        </nav>
-    </header>
-    <main class="container">
-        <section class="introduction">
-            <h1 class="visually-hidden">Отели в Седоне</h1>
-            <!--фоновое изображение с текстом-->
-        </section>
-        <section class="reasons">
-            <h2 class="visually-hidden">5 причин посетить Седону</h2>
-            <p class="attention">Седона - небольшой городок в Аризоне, заслуживающий большего!</p>
-            <p>Рассмотрим пять причин, по которым Седона круче, чем Гранд-Каньон!</p>
-        </section>
+            <nav class="main-menu">
+                <ul class="menu-list">
+                    <li><a href="information.html">Информация</a></li>
+                    <li><a href="video.html">Фото и видео</a></li>
+                    <li><a href="statemap.html">Карта штата</a></li>
+                    <li><a href="hotels.html">Гостиницы</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="container">
+            <section class="introduction">
+                <h1 class="visually-hidden">Отели в Седоне</h1>
+                <div class="welcome-message">
+                    <img src="img/welcome-text.svg" alt="Welcome to the georgeous Sedona! Because the Grand Canyon sucks" width="459" height="353">
+                </div>
+            </section>
+            <section class="reasons">
+                <h2 class="visually-hidden">5 причин посетить Седону</h2>
+                <p class="attention">Седона - небольшой городок в Аризоне, заслуживающий большего!</p>
+                <p>Рассмотрим пять причин, по которым Седона круче, чем Гранд-Каньон!</p>
+            </section>
         <!-- Дальше идут блоки пяти причин -->
-        <section class="hotel-search">
-            <h2 class="visually-hidden">Найти отель в Седоне</h2>
-            <span class="attention">Заинтересовались?</span>
-            <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-            <button type="button" class="dropdown-btn">Поиск гостиницы в Седоне</button>
-            <!-- Дальше должно развернуться модальное окно формы -->
-            <form action="https://echo.htmlacademy.ru" method="post" class="modal date-form">
-                <p>
-                    <label for="check-in-id">Дата заезда</label>
-                    <input type="text" class="date" name="check-in" id="check-in-id" placeholder="24 апреля 2017">
-                </p>
-                <p>
-                    <label for="check-out-id">Дата выезда</label>
-                    <input type="text" class="date" name="check-out" id="check-out-id" placeholder="4 июля 2017">
-                </p>
-                <p>
-                    <label for="number-adults-id">Взрослые</label>
-                    <!-- Вопрос: вставляем иконки "+" и "-" прямо внутрь тега button через <img>?-->
-                    <button type="button" class="minus-btn"></button>
-                    <input type="text" name="number-adults" id="number-adults-id" placeholder="2">
-                    <button type="button" class="plus-btn"></button>
-                </p>
-                <p>
-                    <label for="number-kids-id">Дети</label>
-                    <button type="button" class="minus-btn">
-                    <input type="text" name="number-kids" id="number-kids-id" placeholder="0">
-                    <button type="button" class="plus-btn"></button>
-                </p>
-                <button type="submit" class="date-btn">Найти</button>
-            </form>
-        </section>
+            <section class="hotel-search">
+                <h2 class="visually-hidden">Найти отель в Седоне</h2>
+                <span class="attention">Заинтересовались?</span>
+                <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+                <button type="button" class="dropdown-btn">Поиск гостиницы в Седоне</button>
+                <!-- Дальше должно развернуться модальное окно формы -->
+                <form action="https://echo.htmlacademy.ru" method="post" class="modal date-form">
+                    <p>
+                        <label for="check-in-id">Дата заезда</label>
+                        <input type="text" class="date" name="check-in" id="check-in-id" placeholder="24 апреля 2017">
+                    </p>
+                    <p>
+                        <label for="check-out-id">Дата выезда</label>
+                        <input type="text" class="date" name="check-out" id="check-out-id" placeholder="4 июля 2017">
+                    </p>
+                    <p>
+                        <label for="number-adults-id">Взрослые</label>
+                        <button type="button" class="minus-btn"></button>
+                        <input type="text" name="number-adults" id="number-adults-id" placeholder="2">
+                        <button type="button" class="plus-btn"></button>
+                    </p>
+                    <p>
+                        <label for="number-kids-id">Дети</label>
+                        <button type="button" class="minus-btn">
+                        <input type="text" name="number-kids" id="number-kids-id" placeholder="0">
+                        <button type="button" class="plus-btn"></button>
+                    </p>
+                    <button type="submit" class="date-btn">Найти</button>
+                </form>
+            </section>
         <!-- Здесь будет карта -->
-        <section class="map">
-            <h2 class="visually-hidden">Карта Седоны</h2>
-            <p>
-                <img src="img/map.jpg" width="1200" height="593" alt="Карта города Седона">
-            </p>
-        </section>
-    </main>
-    <footer class="main-footer container">
-        <div class="container">
-          <!-- два раза класс контейнер, потому что не понимаю,
-           как можно проще сделать флекс-обертки для хедера, отсюда куча классов,и они тянутся до футера.
-            Например, если сделать просто width 1200px для main-footer, то все едет, и я даже не понимаю почему.
-
-         И еще вопрос - между футером и боди лишний отступ, как его убрать? спасибо -->
+            <section class="map">
+                <h2 class="visually-hidden">Карта Седоны</h2>
+                <p class="map-container">
+                    <img src="img/map.jpg" width="1200" height="593" alt="Карта города Седона">
+                </p>
+            </section>
+        </main>
+        <footer class="main-footer">
             <p class="footer-hashtag">#VISITSEDONA</p>
             <ul class="footer-social">
                 <li class="social-button"><a href="www.twitter.com/12345">Мы в твиттере</a></li>
@@ -99,7 +84,7 @@
                 <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img\logo_html-academy-black.png" alt="Логотип HTML Academy" width="115" height="41">
                 </a>
             </p>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>
