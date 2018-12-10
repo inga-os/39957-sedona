@@ -25,14 +25,11 @@ a {
     …
 }
 
-.modal { /*временно*/
-    display: none;
-}
-
 .center-container {
     background-color: #ffffff;
     width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 .main-menu {
@@ -108,7 +105,7 @@ h3 {
     margin: 0;
 }
 
-.hotel-search .attention {
+.hotel-finder .attention {
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
@@ -116,7 +113,7 @@ h3 {
 }
 
 .dropdown-btn {
-    font-family: "PT Sans", Arial, sans-serif; -
+    font-family: "PT Sans", Arial, sans-serif;
     font-size: 21px;
     font-weight: 700;
 
@@ -139,8 +136,7 @@ h3 {
 
 .dropdown-btn:active {
     color: rgba(255, 255, 255, 0.302);
-    /*Так можно указать opacity, чтобы это свойство относилось только к тексту,
-     а не к кнопке?*/
+
     background-color: #503e33;
 }
 
@@ -175,6 +171,7 @@ h3 {
 }
 
 .footer-hashtag {
+    font-size: 21px;
     font-weight: 700;
 }
 
@@ -211,7 +208,7 @@ ul.footer-social  {
     margin-bottom: 70px;
 }
 
-.hotel-search {
+.hotel-finder {
     width: 576px;
     margin: 0 auto;
 }
@@ -260,11 +257,32 @@ ul.footer-social  {
     background-color: #bcd5e5;
 }
 
-.search-form {/*Не получилось сделать форму флекс-элементом,
-  блоки разъезжаются на всю ширину экрана
-  https://gyazo.com/4935b9d2ef492b3d66c7145f0dbb2cac*/
+.search-form {
+    display: flex;
+    padding-top: 30px;
 }
 
+.infrastructure {
+  margin: 0;
+  padding: 0;
+  width: 140px;
+  padding-left: 72px;
+  margin-right: 115px;
+}
+
+.lodging {
+  margin: 0;
+  padding: 0;
+  width: 140px;
+}
+
+.show-range {
+  margin: 0;
+  padding: 0;
+  width: 320px;
+  margin-left: auto;
+
+}
 .hotel-search {
     font-size: 14px;
     line-height: 21px;
@@ -275,10 +293,13 @@ ul.footer-social  {
 }
 
 .mainfilter {
+   margin: 0;
+    padding: 0;
     font-size: 16px;
     line-height: 21px;
     font-weight: 700;
     color: #ffffff;
+    text-align: left;
 }
 
 .filter-btn {
@@ -313,14 +334,13 @@ ul.footer-social  {
 }
 
 .found h3 {
-  /*Вопрос: есть небольшой лишний отступ слева (доп. к 72px).
-   Где ошибка и как это поправить?*/
     margin: 0;
     width: 135px;
     margin-right: 50px;
     padding-left: 72px;
     padding-top: 31px;
     padding-bottom: 31px;
+    text-align: left
 
 }
 .sorted {
@@ -427,6 +447,23 @@ li.sorted-active {
     background-color: #fbfbfb;
 }
 
+.hotel-category {
+    display: inline-block;
+    width: 110px;
+    margin: 0;
+    padding: 0;
+    margin-right: 6px;
+}
+
+.hotel-info h3 {
+    text-align: left;
+}
+
+.hotel-pricerange {
+    margin: 0;
+    padding: 0;
+}
+
 .description-btn {
     font-family: "PT Sans", Arial, sans-serif;
     font-size: 14px;
@@ -439,7 +476,7 @@ li.sorted-active {
 
     background-color: #81b3d2;
 
-    min-width: 76px;
+    width: 110px;
     padding: 9px 16px;
 }
 
@@ -464,7 +501,7 @@ li.sorted-active {
 
     background-color: #766357;
 
-    min-width: 112px;
+    width: 142px;
     padding: 9px 16px;
   }
 
@@ -475,3 +512,36 @@ li.sorted-active {
 .booking-btn:active {
     background-color: #503e33;
     color: rgba(255, 255, 255, 0.302);
+  }
+
+.date-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 55px;
+    background-color: #ffffff;
+}
+
+.date-btn {
+    width: 100%;
+    padding: 30px 197px;
+    display: block;
+}
+
+.date-form label {
+    font-weight: 700;
+    color: #000000;
+}
+
+.date-form input {
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+
+    background-color: #f2f2f2;
+    border: none;
+  }

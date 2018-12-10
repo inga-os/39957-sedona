@@ -35,33 +35,31 @@
                 <p>Рассмотрим пять причин, по которым Седона круче, чем Гранд-Каньон!</p>
             </section>
         <!-- Дальше идут блоки пяти причин -->
-            <section class="hotel-search">
+            <section class="hotel-finder">
                 <h2 class="visually-hidden">Найти отель в Седоне</h2>
                 <span class="attention">Заинтересовались?</span>
                 <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
                 <button type="button" class="dropdown-btn">Поиск гостиницы в Седоне</button>
                 <!-- Дальше должно развернуться модальное окно формы -->
                 <form action="https://echo.htmlacademy.ru" method="post" class="modal date-form">
-                    <p>
-                        <label for="check-in-id">Дата заезда</label>
+                    <p class="pick-date">
+                        <label for="check-in-id">Дата заезда:</label>
                         <input type="text" class="date" name="check-in" id="check-in-id" placeholder="24 апреля 2017">
                     </p>
-                    <p>
-                        <label for="check-out-id">Дата выезда</label>
+                    <p class="pick-date">
+                        <label for="check-out-id">Дата выезда:</label>
                         <input type="text" class="date" name="check-out" id="check-out-id" placeholder="4 июля 2017">
                     </p>
-                    <p>
-                        <label for="number-adults-id">Взрослые</label>
-                        <button type="button" class="minus-btn"></button>
+                    <div class="pick-number">
+                    <p class="pick-adults">
+                        <label for="number-adults-id">Взрослые:</label>
                         <input type="text" name="number-adults" id="number-adults-id" placeholder="2">
-                        <button type="button" class="plus-btn"></button>
                     </p>
-                    <p>
-                        <label for="number-kids-id">Дети</label>
-                        <button type="button" class="minus-btn">
+                    <p class="pick-kids">
+                        <label for="number-kids-id">Дети:</label>
                         <input type="text" name="number-kids" id="number-kids-id" placeholder="0">
-                        <button type="button" class="plus-btn"></button>
                     </p>
+                    </div>
                     <button type="submit" class="date-btn">Найти</button>
                 </form>
             </section>

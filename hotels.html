@@ -25,12 +25,8 @@
         <main class="container">
             <section class="filters">
                 <h2 class="visually-hidden">Фильтры поиска отеля</h2>
-                <!-- Вопрос: сама форма может быть флекс-контейнером?
-                Попробовала сделать форму флексом и трем блокам внутри задать ширину и отступы,
-                но они растягиваются на всю ширину экрана и не реагируют на марджины и паддинги
-                 https://gyazo.com/4935b9d2ef492b3d66c7145f0dbb2cac-->
                 <form action="https://echo.htmlacademy.ru" method="get" class="search-form">
-                    <fieldset class="infrastructure">
+                    <div class="infrastructure">
                     <legend class="mainfilter">ИНФРАСТРУКТУРА:</legend>
                     <ul class="hotel-search">
                         <li>
@@ -46,8 +42,8 @@
                             <label for="wifi-id">WI-FI</label>
                         </li>
                     </ul>
-                    </fieldset>
-                    <fieldset class="lodging">
+                  </div>
+                    <div class="lodging">
                     <legend class="mainfilter">ТИП ЖИЛЬЯ:</legend>
                     <ul class="hotel-search">
                         <li>
@@ -63,7 +59,7 @@
                             <label for="apartment-id">АПАРТАМЕНТЫ</label>
                         </li>
                     </ul>
-                    </fieldset>
+                  </div>
                     <!-- здесь будет ползунок с ценой-->
                     <div class="show-range">
                         <p class="mainfilter">Стоимость в сутки (р):</p>
@@ -100,8 +96,8 @@
                             <a href="amararesort-description.html">
                                 <h3>Amara Resort & Spa</h3>
                             </a>
-                            <span class="hotel-category">Гостиница</span>
-                            <span class="hotel-pricerange">От 4000 Р.</span>
+                            <p class="hotel-category">Гостиница</p>
+                            <p class="hotel-pricerange">От 4000 Р.</p>
                             <a class="description-btn" href="amararesort-description.html">Подробнее</a>
                             <a class="booking-btn" href="book-hotel.html">Забронировать</a>
                         </div>
@@ -117,11 +113,8 @@
                     </li>
                     <li class="hotel-card">
                         <div class="hotel-photo">
-                          <!-- Вопрос: как сделать, чтобы элементы в блоке располагались правильно?
-                          - чтобы заголовок, текст "Гостиницы" и кнопка "подробнее" были вертикально выровнены,
-                          - и так же текст "от 4000р" и кнопка "забронировать" тоже были выровнены вертикально относительно друг друга?
-                        Пробовала делать элемент hotel-photo флекс-конетйнером,
-                        но не могу поставить элементы как на макете-->
+                          <!-- Сделала правки, но блок не выровнялся.
+                          Элементы p расположены друг под другом, а не на одном уровне-->
                             <a href="desert-inn-description.html">
                                 <img src="img/hotel-quail-inn.jpg" alt="Мотель Desert Quail Inn" width="135" height="90">
                             </a>
@@ -130,8 +123,8 @@
                             <a href="desert-inn-description.html">
                                 <h3>Desert Quail Inn</h3>
                             </a>
-                            <span class="hotel-category">Мотель</span>
-                            <span class="hotel-pricerange">ОТ 3000 Р.</span>
+                            <p class="hotel-category">Мотель</p>
+                            <p class="hotel-pricerange">ОТ 3000 Р.</p>
                             <a class="description-btn" href="desert-inn-description.html">ПОДРОБНЕЕ</a>
                             <a class="booking-btn" href="book-hotel.html">ЗАБРОНИРОВАТЬ</a>
                         </div>
@@ -154,8 +147,8 @@
                             <a href="villas-diablo-description.html">
                                 <h3>Villas at Poco Diablo</h3>
                             </a>
-                            <span class="hotel-category">Апартаменты</span>
-                            <span class="hotel-pricerange">От 2000 Р.</span>
+                            <p class="hotel-category">Апартаменты</p>
+                            <p class="hotel-pricerange">От 2000 Р.</p>
                             <a class="description-btn" href="villas-diablo-description.html">Подробнее</a>
                             <a class="booking-btn" href="book-hotel.html">Забронировать</a>
                         </div>
