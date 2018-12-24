@@ -295,8 +295,6 @@ p.di-move {
 
 .hotel-finder {
     position: relative;
-
-    width: 576px;
     margin: 0 auto;
 }
 
@@ -347,16 +345,18 @@ p.di-move {
 
 .date-form {
     position: absolute;
-    left: 0px;
+    left: 316px;
     top: 287px;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    box-sizing: border-box;
+    width: 568px;
     margin: 0;
     padding-top: 58px;
     padding-bottom: 56px;
-    padding-left: 59px;
+    padding-left: 56px;
     padding-right: 59px;
 
     background-color: #ffffff;
@@ -378,23 +378,44 @@ p.di-move {
     display: flex;
     margin: 0;
     padding: 0;
-    padding-bottom: 51px;
+    padding-bottom: 53px;
 }
 
 .pick-adults {
     position: relative;
 
-    width: 220px;
+    width: 223px;
     margin-right: auto;
 }
 
 .pick-kids {
-    width: 180px;
+    width: 175px;
 }
 
 .date-btn {
     width: 100%;
-    padding: 18px 197px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    background-color: #81b3d2;
+    border: none;
+}
+
+.date-btn:hover {
+    background-color: #669ec0;
+}
+
+.date-btn:active {
+    color: rgba(255, 255, 255, 0.302);
+    background-color: #5496bd;
 }
 
 .date-form label {
@@ -432,6 +453,7 @@ p.di-move {
 
     background-color: #f2f2f2;
     border: 2px solid #f2f2f2;
+    outline: none;
 }
 
 .date-form input:hover{
@@ -516,14 +538,14 @@ p.di-move {
 
 .pick-date input {
     width: 320px;
-    margin-left: 22px;
-    padding-right: 11px;
+    margin-left: auto;
+    padding-right: 8px;
     padding-left: 10px;
 }
 
 .calendar {
     position: absolute;
-    right: 12px;
+    right: 6px;
     top: 7px;
 
     padding: 0;
@@ -541,27 +563,7 @@ p.di-move {
     fill: #81b3d2;
 }
 
-.date-btn {
-    font-family: "PT Sans", Arial, sans-serif;
-    font-size: 21px;
-    font-weight: 700;
-    text-align: center;
-    vertical-align: middle;
-    text-transform: uppercase;
-    color: #ffffff;
 
-    background-color: #81b3d2;
-    border: none;
-}
-
-.date-btn:hover {
-    background-color: #669ec0;
-}
-
-.date-btn:active {
-    color: rgba(255, 255, 255, 0.302);
-    background-color: #5496bd;
-}
 
 .map-container {
     margin: 0;
