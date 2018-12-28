@@ -354,10 +354,10 @@ p.di-move {
     box-sizing: border-box;
     width: 568px;
     margin: 0;
-    padding-top: 58px;
+    padding-top: 56px;
     padding-bottom: 56px;
     padding-left: 56px;
-    padding-right: 59px;
+    padding-right: 56px;
 
     background-color: #ffffff;
     box-shadow: 0 0 30px -4px rgba(0,0,0,.6);
@@ -436,13 +436,14 @@ p.di-move {
 
 .pick-adults label {
     align-self: center;
-    padding-right: 42px;
+    padding-right: 40px;
 }
 
 .date-form input {
     display: inline-block;
     padding-top: 4px;
     padding-bottom: 4px;
+    height: 26px;
 
     font-family: inherit;
     font-size: 14px;
@@ -537,16 +538,16 @@ p.di-move {
 }
 
 .pick-date input {
-    width: 320px;
+    width: 328px;
     margin-left: auto;
-    padding-right: 8px;
-    padding-left: 10px;
+    padding-right: 3px;
+    padding-left: 8px;
 }
 
 .calendar {
     position: absolute;
-    right: 6px;
-    top: 7px;
+    right: 8px;
+    top: 12%;
 
     padding: 0;
 
@@ -887,7 +888,8 @@ p.di-move {
     fill: #000000;
 }
 
-.arrow-controls:active path {
+.arrow-controls:active path,
+.arrow-controls path:active {
     fill: #81b3d2;
 }
 
@@ -1147,7 +1149,8 @@ p.di-move {
     fill: #81b3d2;
   }
 
-.copyright:active path {
+.copyright:active path,
+.copyright path:active {
     fill: #bdbbbc;
 }
 
